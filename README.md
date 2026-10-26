@@ -1,6 +1,6 @@
 # 2.20-Login-Server-Files
 
-Configuration and data files read by the Login server: account authentication, the character-selection screen and the handoff to the World server. It reads no game files and saves no characters in play. Configs are JSON with comments enabled..
+Configuration and data files read by the Login server: account authentication, the character-selection screen and the handoff to the World server. It reads no game files and saves no characters in play. Configs are JSON with comments enabled.
 
 ## Contents
 
