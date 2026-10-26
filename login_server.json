@@ -1,0 +1,41 @@
+{
+	"listen": {
+		"bind_address": "0.0.0.0",
+		// Clients log in and pick a character here.
+		"client_port": 2848,
+		// World servers connect here; keep it off the public network.
+		"world_port": 3840
+	},
+	// World servers allowed to register. The key is 64 hex digits, shared with that World's config.
+	"worlds": [
+		{
+			"name": "WS1",
+			"allowed_address": "127.0.0.1",
+			"link_key": "0000000000000000000000000000000000000000000000000000000000000000"
+		}
+	],
+	"protocol": {
+		"max_body_bytes": 65536,
+		// Seconds a client waits for the World server before getting world_unavailable.
+		"world_request_timeout_seconds": 5,
+		"heartbeat_seconds": 5
+	},
+	"accounts": {
+		// Lets the client's create-account screen make accounts.
+		"allows_client_account_creation": false,
+		// Argon2id cost: libsodium "interactive", "moderate" or "sensitive".
+		"password_hash_cost": "moderate"
+	},
+	"session": {
+		// Seconds a ticket stays valid between enter_game_response and the World accepting it.
+		"ticket_lifetime_seconds": 20,
+		"idle_timeout_before_login_seconds": 60,
+		"idle_timeout_after_login_seconds": 600
+	},
+	"database": {
+		"path": "data/login.db"
+	},
+	"log": {
+		"level": "info"
+	}
+}
