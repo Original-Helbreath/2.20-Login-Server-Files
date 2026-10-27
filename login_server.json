@@ -22,9 +22,11 @@
 	},
 	"accounts": {
 		// Lets the client's create-account screen make accounts.
-		"allows_client_account_creation": false,
+		"allows_client_account_creation": true,
 		// Argon2id cost: libsodium "interactive", "moderate" or "sensitive".
-		"password_hash_cost": "moderate"
+		"password_hash_cost": "moderate",
+		// Secret pepper keys, created on first run. Keep it out of the repo and back it up.
+		"pepper_file": "data/pepper.json"
 	},
 	"session": {
 		// Seconds a ticket stays valid between enter_game_response and the World accepting it.
@@ -33,7 +35,10 @@
 		"idle_timeout_after_login_seconds": 600
 	},
 	"database": {
-		"path": "data/login.db"
+		// Shared with the World server, which owns the character tables in it.
+		"path": "data/players.db",
+		// Connections in Schemata's pool; the worker thread count matches it.
+		"pool_size": 4
 	},
 	"log": {
 		"level": "info"
