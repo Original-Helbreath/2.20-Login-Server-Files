@@ -4,7 +4,10 @@
 		// Clients log in and pick a character here.
 		"client_port": 2848,
 		// World servers connect here; keep it off the public network.
-		"world_port": 3840
+		"world_port": 3840,
+		// Open connections each port holds at most; extra ones are closed on accept.
+		"max_client_connections": 1000,
+		"max_world_connections": 8
 	},
 	// World servers allowed to register. The key is 64 hex digits, shared with that World's config.
 	"worlds": [
